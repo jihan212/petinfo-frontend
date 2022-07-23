@@ -7,7 +7,7 @@ const Vetdetailscreen = () => {
   const [vet, setVet] = useState({})
 
   useEffect(() => {
-    const url = `http://localhost:5000/vets/${vetId}`
+    const url = `https://petinfo-server.herokuapp.com/vets/${vetId}`
 
     fetch(url)
       .then((res) => res.json())

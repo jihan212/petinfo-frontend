@@ -53,7 +53,7 @@ const VetaddScreen = () => {
       whatsapp,
     }
 
-    fetch('http://localhost:5000/vets', {
+    fetch('https://petinfo-server.herokuapp.com/vets', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
