@@ -1,14 +1,40 @@
-import React, {  useEffect } from 'react' 
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Input = () => {
-
-  //  const [division_list, setDivisionList] = useState([])
+  const [division_list, setDivisionList] = useState([])
+  const [divisionid, setDivisionid] = useState('')
+  const [district, setDistrict] = useState([])
+  const [selectedDistrict, setselectedDistrict] = useState(null)
 
   useEffect(() => {
-    fetch('https://bdapis.herokuapp.com/api/v1.1/divisions')
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-  })
+    const getdivision = async () => {
+      const req = await fetch('https://bdapis.herokuapp.com/api/v1.1/divisions')
+      const getres = await req.json()
+      console.log(getres)
+      setDivisionList(await getres.data)
+    }
+    getdivision()
+  }, [])
+
+  const getdistrict = async (divisionid) => {
+    const lowerDivId = divisionid.toLowerCase()
+    const resdistrict = await axios.get(
+      `https://bdapis.herokuapp.com/api/v1.1/division/${lowerDivId}`
+    )
+
+    const getdis = resdistrict.data.data
+    setDistrict(getdis)
+    console.log(getdis, '---div')
+  }
+
+  const handlecountry = (event) => {
+    event.preventDefault()
+    const getdivisionid = event.target.value
+    setDivisionid(getdivisionid)
+    getdistrict(getdivisionid)
+    event.preventDefault()
+  }
 
   return (
     <>
@@ -21,11 +47,16 @@ const Input = () => {
             <label className='bg-inherit text-slate-900 font-semibold text-xl'>
               বিভাগ
             </label>
-            <select className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'>
+            <select
+              onChange={(e) => handlecountry(e)}
+              className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'
+            >
               <option value='US'>বিভাগ নির্বাচন করুন</option>
-              {/* {division_list.map((division) => (
-                <option value={division.division}>{division.division}</option>
-              ))} */}
+              {division_list.map((getdivision) => (
+                <option key={getdivision._id} value={getdivision.division}>
+                  {getdivision.division}
+                </option>
+              ))}
             </select>
           </div>
           <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
@@ -34,10 +65,13 @@ const Input = () => {
             </label>
             <select className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'>
               <option value='US'>জেলা নির্বাচন করুন </option>
-              <option>Dhaka</option>
-              <option>Chittagong</option>
-              <option>Borisal</option>
-              <option>Rajshahi</option>
+
+              {district &&
+                district.map((getdistrict) => (
+                  <option key={getdistrict._id} value={getdistrict.district}>
+                    {getdistrict.district}
+                  </option>
+                ))}
             </select>
           </div>
           <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
@@ -46,10 +80,6 @@ const Input = () => {
             </label>
             <select className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'>
               <option value='US'>উপজেলা নির্বাচন করুন</option>
-              <option>Dhaka</option>
-              <option>Chittagong</option>
-              <option>Borisal</option>
-              <option>Rajshahi</option>
             </select>
           </div>
           <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
