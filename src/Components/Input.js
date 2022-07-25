@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const Input = () => {
   const [division_list, setDivisionList] = useState([])
+  // eslint-disable-next-line
   const [divisionid, setDivisionid] = useState('')
   const [district, setDistrict] = useState([])
   // const [selectedDistrict, setselectedDistrict] = useState(null)
@@ -27,7 +28,7 @@ const Input = () => {
     setDistrict(getdis)
   }
 
-  const handlecountry = (event) => {
+  const handledivision = (event) => {
     event.preventDefault()
     const getdivisionid = event.target.value
     setDivisionid(getdivisionid)
@@ -56,7 +57,7 @@ const Input = () => {
               বিভাগ
             </label>
             <select
-              onChange={(e) => handlecountry(e)}
+              onChange={(e) => handledivision(e)}
               className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'
             >
               <option value='US'>বিভাগ নির্বাচন করুন</option>
