@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react' 
+import React, {  useEffect } from 'react' 
 
 const Input = () => {
 
-   const [division_list, setDivisionList] = useState([])
+  //  const [division_list, setDivisionList] = useState([])
 
   useEffect(() => {
     fetch('https://bdapis.herokuapp.com/api/v1.1/divisions')
