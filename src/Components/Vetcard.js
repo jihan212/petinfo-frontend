@@ -15,7 +15,7 @@ const Vetcard = (props) => {
     <>
       <div class='max-w-sm bg-white rounded-lg border border-gray-200 shadow-md'>
         <div class='flex justify-end px-4 pt-4'></div>
-        <div class='flex flex-col items-center pb-10'>
+        <div class='flex flex-col items-center p-10'>
           <img class='mb-3 w-20 h-20 rounded-full shadow-lg' src={img} alt='' />
           <h5 class='mb-1 text-xl text-2xl text-gray-900'>{name}</h5>
           <p class='flex mt-4 space-x-3 lg:mt-6 font-medium'>

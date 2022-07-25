@@ -20,8 +20,8 @@ const Homescreen = () => {
       <Intro />
       <Input />
       <section>
-        <h1 className='font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center header-font p-5 m-5'>
-          Available Vets In Your Area
+        <h1 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center bangla-font p-5 m-5'>
+          আপনার এলাকায় আয়ত্তাধীন পশু চিকিৎসক
         </h1>
         <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8'>
           {vets.map((vet) => (

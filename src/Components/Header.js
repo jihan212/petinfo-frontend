@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../Images/logo.png'
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const bangla = () => {
   return (
     <>
       <nav className='w-full border-b'>
@@ -15,36 +15,36 @@ const Header = () => {
           <div>
             <div id='menu' className='md:block lg:block hidden'>
               <ul className='flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20'>
-                <li className='text-gray-700 hover:text-gray-900 header-font lg:text-lg pt-10 md:pt-0'>
+                <li className='text-gray-700 hover:text-gray-900 bangla-font lg:text-lg pt-10 md:pt-0'>
                   <Link
                     to='/about'
-                    className='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                    className='no-underline text-xl text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
-                    About
+                    আমাদের সম্পর্কে
                   </Link>
                 </li>
-                <li className='text-gray-700 hover:text-gray-900 header-font text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
+                <li className='text-gray-700 hover:text-gray-900 bangla-font text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
                   <Link
                     to='/rescue'
-                    className='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                    className='no-underline text-xl text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
-                    Rescue
+                    রিস্কিউ
                   </Link>
                 </li>
-                <li className='text-gray-700 hover:text-gray-900 header-font text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
+                <li className='text-gray-700 hover:text-gray-900 bangla-font text-base lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
                   <Link
                     to='/services'
-                    className='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                    className='no-underline text-xl text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
-                    Services
+                    সেবাসমূহ
                   </Link>
                 </li>
-                <li className='text-gray-700 hover:text-gray-900 header-font lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
+                <li className='text-gray-700 hover:text-gray-900 bangla-font lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
                   <Link
                     to='/blogs'
-                    className='no-underline text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
+                    className='no-underline text-xl text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
-                    Blog
+                    ব্লগ
                   </Link>
                 </li>
               </ul>
@@ -56,4 +56,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default bangla
