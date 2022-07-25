@@ -9,7 +9,7 @@ const bangla = () => {
         <div className='py-5 md:py-0 container mx-auto px-6 flex items-center justify-between'>
           <div aria-label='Home.logo' role='img'>
             <Link to='/'>
-              <img className='w-4/6' src={logo} alt='vetInfo' />
+              <img className='w-2/6' src={logo} alt='vetInfo' />
             </Link>
           </div>
           <div>
