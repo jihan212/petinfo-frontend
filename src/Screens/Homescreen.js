@@ -26,7 +26,7 @@ const Homescreen = () => {
         </h1>
         <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8'>
           {vets.map((vet) => (
-            <VetCard vet={vet}></VetCard>
+            <VetCard key={vet._id} vet={vet}></VetCard>
           ))}
         </div>
       </section>

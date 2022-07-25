@@ -39,14 +39,14 @@ const bangla = () => {
                     সেবাসমূহ
                   </Link>
                 </li>
-                <li className='text-gray-700 hover:text-gray-900 bangla-font lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
+                {/* <li className='text-gray-700 hover:text-gray-900 bangla-font lg:text-lg pt-10 md:pt-0 md:ml-5 lg:ml-10'>
                   <Link
                     to='/blogs'
                     className='no-underline text-xl text-black hover:text-blue-dark mx-5 px-5 text-3xl font-semibold'
                   >
                     ব্লগ
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

@@ -5,7 +5,7 @@ const Input = () => {
   const [division_list, setDivisionList] = useState([])
   const [divisionid, setDivisionid] = useState('')
   const [district, setDistrict] = useState([])
-  const [selectedDistrict, setselectedDistrict] = useState(null)
+  // const [selectedDistrict, setselectedDistrict] = useState(null)
 
   useEffect(() => {
     const getdivision = async () => {
@@ -25,7 +25,6 @@ const Input = () => {
 
     const getdis = resdistrict.data.data
     setDistrict(getdis)
-    console.log(getdis, '---div')
   }
 
   const handlecountry = (event) => {
@@ -36,13 +35,22 @@ const Input = () => {
     event.preventDefault()
   }
 
+  // const handleUpzilla = (event) => {
+  //   event.preventDefault()
+  //   // setselectedDistrict(event.target.value)
+
+  //   const seldis = event.target.value
+  //   const indexofDis = district.map((data) => console.log(data._id))
+  //   console.log('selec', indexofDis)
+  // }
+
   return (
     <>
       <section className='p-8 m-8'>
         <h1 className='font-black text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center bangla-font p-5 m-5'>
           আপনার লোকেশন দিন
         </h1>
-        <div className='grid grid-cols-4 gap-4 bg-indigo flex justify-around bangla-font'>
+        <div className='grid grid-cols-3 gap-4 bg-indigo flex justify-around bangla-font'>
           <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
             <label className='bg-inherit text-slate-900 font-semibold text-xl'>
               বিভাগ
@@ -63,7 +71,10 @@ const Input = () => {
             <label className='bg-inherit text-xl text-slate-900 font-semibold'>
               জেলা
             </label>
-            <select className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'>
+            <select
+              // onChange={(e) => handleUpzilla(e)}
+              className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'
+            >
               <option value='US'>জেলা নির্বাচন করুন </option>
 
               {district &&
@@ -74,14 +85,14 @@ const Input = () => {
                 ))}
             </select>
           </div>
-          <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
+          {/* <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
             <label className='bg-inherit text-xl text-slate-900 font-semibold'>
               উপজেলা
             </label>
             <select className=' bg-slate-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'>
               <option value='US'>উপজেলা নির্বাচন করুন</option>
             </select>
-          </div>
+          </div> */}
           <div className='max-w-xs bg-inherit flex flex-col gap-2 m-5'>
             <label className='bg-inherit text-xl text-slate-900 font-semibold'>
               সার্চ
