@@ -6,11 +6,11 @@
 # Frontend 
 ## Homepage interface 
 
-![Homepage](https://github.com/jihan212/petinfo-frontend/blob/d0f6338b33e269595a39669fdfecec0f22cc2cdc/src/Images/homepage.png)
+![Homepage](https://github.com/jihan212/petinfo-frontend/blob/main/src/Images/homepage.png)
 
 ## Vet details interface 
 
-![Vetdetailspage](https://github.com/jihan212/petinfo-frontend/blob/d0f6338b33e269595a39669fdfecec0f22cc2cdc/src/Images/vet-details.png)
+![Vetdetailspage](https://github.com/jihan212/petinfo-frontend/blob/main/src/Images/vet-details.png)
 
 ## Admin interface for adding vet details 
 
