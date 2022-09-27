@@ -15,7 +15,7 @@ const RescueScreen = () => {
   return (
     <>
       <Header />
-      <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8 bangla-font'>
+      <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8 bangla-font '>
         <div className='max-w-sm bg-white rounded-lg border border-gray-200 shadow-md'>
           <div className='flex justify-end px-4 pt-4'></div>
           <div className='flex flex-col items-center p-10 '>

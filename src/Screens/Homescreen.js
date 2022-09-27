@@ -20,13 +20,13 @@ const Homescreen = () => {
       <Header />
       <Intro />
       <Input />
-      <section>
-        <h1 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center bangla-font p-5 m-5'>
-          আপনার এলাকায় আয়ত্তাধীন পশু চিকিৎসক
-        </h1>
+      <h1 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center bangla-font p-5 m-5'>
+        আপনার এলাকায় আয়ত্তাধীন পশু চিকিৎসক
+      </h1>
+      <section className='bg-sky-100'>
         <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8'>
           {vets.map((vet) => (
-            <VetCard key={vet._id} vet={vet}></VetCard> 
+            <VetCard key={vet._id} vet={vet}></VetCard>
           ))}
         </div>
       </section>

@@ -36,6 +36,12 @@ const Input = () => {
     event.preventDefault()
   }
 
+  const onClick = (e)=>{
+
+    console.log(e)
+
+  }
+
   // const handleUpzilla = (event) => {
   //   event.preventDefault()
   //   // setselectedDistrict(event.target.value)
@@ -98,7 +104,7 @@ const Input = () => {
             <label className='bg-inherit text-xl text-slate-900 font-semibold'>
               সার্চ
             </label>
-            <button className='bg-sky-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600'>
+            <button className='bg-sky-100 outline-none p-2 rounded-md focus:border  focus:border-sky-400 text-lg text-slate-600' onClick={onClick}>
               Enter
             </button>
           </div>
