@@ -1,39 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import Header from '../Components/Header'
-import Intro from '../Components/Intro'
-import Input from '../Components/Input'
-import VetCard from '../Components/Vetcard'
-import FAQ from '../Components/FAQ'
-import Footer from '../Components/Footer'
+import React, { useState, useEffect } from 'react';
+import Header from '../Components/Header';
+import Intro from '../Components/Intro';
+import Input from '../Components/Input';
+import VetCard from '../Components/Vetcard';
+import FAQ from '../Components/FAQ';
+import Footer from '../Components/Footer';
 
 const Homescreen = () => {
-  const [vets, setVets] = useState([])
+	const [vets, setVets] = useState([]);
 
-  useEffect(() => {
-    fetch('https://petinfo-server.herokuapp.com/vets')
-      .then((res) => res.json())
-      .then((data) => setVets(data))
-  })
+	useEffect(() => {
+		fetch('https://petinfo-server.onrender.com/vets')
+			.then((res) => res.json())
+			.then((data) => setVets(data));
+	});
 
-  return (
-    <>
-      <Header />
-      <Intro />
-      <Input />
-      <h1 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center bangla-font p-5 m-5'>
-        আপনার এলাকায় আয়ত্তাধীন পশু চিকিৎসক
-      </h1>
-      <section className='bg-sky-100'>
-        <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8'>
-          {vets.map((vet) => (
-            <VetCard key={vet._id} vet={vet}></VetCard>
-          ))}
-        </div>
-      </section>
-      <FAQ />
-      <Footer />
-    </>
-  )
-}
+	return (
+		<>
+			<Header />
+			<Intro />
+			<Input />
+			<h1 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-green-400 to-blue-600 text-center bangla-font p-5 m-5'>
+				আপনার এলাকায় আয়ত্তাধীন পশু চিকিৎসক
+			</h1>
+			<section className='bg-sky-100'>
+				<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-8 p-8'>
+					{vets.map((vet) => (
+						<VetCard
+							key={vet._id}
+							vet={vet}
+						></VetCard>
+					))}
+				</div>
+			</section>
+			<FAQ />
+			<Footer />
+		</>
+	);
+};
 
-export default Homescreen
+export default Homescreen;
